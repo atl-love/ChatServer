@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Let's Chat: Node.js + Mongo</title>
+	<link type="text/css" rel="stylesheet" href="css/stylesheet.css" />
+	<link rel="stylesheet" href="css/reveal.css">
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans Condensed:300italic,300,700" rel="stylesheet" type="text/css">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/laptop.css" rel="stylesheet">
+</head>
+<body>
+    <div id="top" class="jumbotron">
+      <div class="container">
+        <h1>Let's Chat: Node.js + Mongo</h1>   
+        <div id="macbook">
+          <div id="tour" class="carousel slide">
+            <ol class="carousel-indicators">
+              <li data-target="#tour" data-slide-to="0" class="active"></li>
+              <li data-target="#tour" data-slide-to="1"></li>
+              <li data-target="#tour" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="item active" >
+                <img src="img/stock1.jpg">
+                <div class="carousel-caption">
+                  Beautiful photos provided by <a href="http://unsplash.com" >unsplash</a>
+                  <a href="/create">
+					<div class="btn btn-success">Let's Chat!</div>
+					<br><br><br>
+				</a>
+                </div>
+              </div>
+              <div class="item">
+                <img src="img/stock2.jpg">
+                <div class="carousel-caption">
+                  Learn something new! 
+                   <a href="/create">
+				<div class="btn btn-success">Let's Chat!</div>
+					<br><br><br>
+				</a>
+                </div>
+              </div>
+              <div class="item">
+                <img src="img/stock3.jpg">
+                <div class="carousel-caption">
+                  Invite Framily - Friends and Family
+                   <a href="/create">
+				<div class="btn btn-success">Let's Chat!</div>
+					<br><br><br>
+				</a>
+                </div>
+              </div>
+            </div> <!-- /.carousel-inner -->
+            <a class="left carousel-control" href="#tour" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="right carousel-control" href="#tour" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+          </div> <!-- /#tour -->
+        </div> <!-- /#macbook -->
+      </div> <!-- /.container -->
+    </div> <!-- /#top.jumbotron -->
+       <!-- NEW USER SIGN UP -->	
+		<div id="loginModal" class="modalDialog" role="dialog" aria-hidden="true" data-show=​"true" data-width="100%" style="display: block; width: 760px; margin-left: -250px; margin-top: -540px;" data-reveal="">
+		  <div class="modal-dialog">
+		  <div class="modal-content">
+			  <div class="modal-header">
+				  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				  <h1 class="text-center">'Let's Chat' Signup</h1>
+			  </div>
+			  <div class="modal-body">
+				  <form class="center" action="/signup" name="register" method="post" onsubmit="return validateForm()">
+					<div class="form-group">
+					  <input type="text" class="form-control input-lg" id="signName" name="signName" placeholder="Select a username...">
+					</div>
+					<div class="form-group">
+					  <input type="password" class="form-control input-lg" d="signpw" name="signpw" placeholder="Password">
+					</div>
+					<div class="form-group">
+					  <input type="submit" value = "Submit" class="btn btn-primary btn-lg btn-block">Create Account</button>
+					  <p id="placeholder"></p>
+					  <span class="pull-center"><a href="" data-dismiss="modal">Already a User? Click here.</a></span>
+					</div>
+				  </form>
+			  </div>
+			  <div class="modal-footer">
+				  <div class="center">
+				  <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+				  </div>	
+			  </div>
+		  </div>
+		  </div>
+		</div>
+    <div class="container">
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+      $(".nav-link").click(function(e) {
+        e.preventDefault();
+        var link = $(this);
+        var href = link.attr("href");
+        $("html,body").animate({scrollTop: $(href).offset().top - 80}, 500);
+        link.closest(".navbar").find(".navbar-toggle:not(.collapsed)").click();
+      });
+    </script>	
+	<!-- SCRIPTS -->
+	<script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type='text/javascript' src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+    $(document).ready(function(){
+        $('#loginModal').modal();
+    } )
+	</script>
+	<script>
+		function validateForm()
+		{
+			var x=document.forms["register"]["signName"].value;
+			var y=document.forms["register"]["signpw"].value;
+			if (x==null || x==""|| x.length<5)
+			  {
+			  alert("Username must be at least 5 characters.");
+			  return false;
+			  }
+			
+			var re = /^[A-Za-z0-9]+$/;
+			
+			if (y==null || y==""|| y.length<8)
+			  {
+			  alert("Password must be longer than 8 characters.");
+			  return false;
+			  }
+			var re_pswd = /^[A-Za-z][A-Za-z0-9]*$/;
+			if (!re_pswd.test(register.signpw.value))
+			  {
+			  alert("Password must be alphanumeric.");
+			  return false;
+			  }
+		}
+	</script>
+	<script type="text/javascript">
+function foobar() {
+    document.getElementById('placeholder').innerHTML = "The Martians are coming!";
+}
+</body>
+</html>
